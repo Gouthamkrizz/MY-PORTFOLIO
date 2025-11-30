@@ -185,8 +185,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
-                                <h3 className="text-2xl font-bold text-slate-900">Message Sent!</h3>
-                                <p className="text-slate-600">Thanks for reaching out. I'll get back to you soon.</p>
+                                <h3 className="text-2xl font-bold text-foreground">Message Sent!</h3>
+                                <p className="text-muted-foreground">Thanks for reaching out. I'll get back to you soon.</p>
                                 <Button onClick={() => setStatus('idle')} variant="outline" className="mt-4">
                                     Send another message
                                 </Button>

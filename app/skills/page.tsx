@@ -34,7 +34,7 @@ import { Code2, Brain, Database, Users } from "lucide-react";
 
 export default function SkillsPage() {
     return (
-        <main className="min-h-screen pt-24 pb-12 px-4 md:px-8 container mx-auto bg-slate-50">
+        <main className="min-h-screen pt-24 pb-12 px-4 md:px-8 container mx-auto bg-background transition-colors duration-300">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -43,10 +43,10 @@ export default function SkillsPage() {
             >
                 <div className="flex flex-col lg:flex-row items-center gap-12 mb-20">
                     <div className="flex-1">
-                        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-blue-700 tracking-tight">
+                        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-primary tracking-tight">
                             Technical Arsenal
                         </h1>
-                        <p className="text-slate-600 text-lg leading-relaxed max-w-xl">
+                        <p className="text-muted-foreground text-lg leading-relaxed max-w-xl">
                             My technical toolkit is built on a solid foundation of computer science principles and practical experience. I carefully select the right tools for each job, prioritizing scalability, maintainability, and performance.
                         </p>
                     </div>
@@ -68,14 +68,14 @@ export default function SkillsPage() {
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1, duration: 0.5 }}
                                 whileHover={{ y: -10, scale: 1.02 }}
-                                className="bg-white/60 backdrop-blur-md border border-white/50 rounded-2xl p-6 shadow-lg hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 group"
+                                className="bg-card/60 backdrop-blur-md border border-border rounded-2xl p-6 shadow-lg hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 group"
                             >
-                                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-300">
-                                    <Icon className="w-6 h-6 text-blue-600 group-hover:text-white transition-colors duration-300" />
+                                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+                                    <Icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
                                 </div>
 
-                                <h3 className="text-xl font-bold mb-3 text-slate-900 group-hover:text-blue-700 transition-colors">{category.title}</h3>
-                                <p className="text-slate-500 mb-6 text-sm leading-relaxed h-24 overflow-hidden">
+                                <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">{category.title}</h3>
+                                <p className="text-muted-foreground mb-6 text-sm leading-relaxed h-24 overflow-hidden">
                                     {category.description}
                                 </p>
 
@@ -83,7 +83,7 @@ export default function SkillsPage() {
                                     {category.skills.map((skill) => (
                                         <span
                                             key={skill}
-                                            className="px-3 py-1 text-xs font-semibold text-slate-600 bg-white border border-slate-200 rounded-full shadow-sm group-hover:border-blue-200 group-hover:text-blue-600 transition-all"
+                                            className="px-3 py-1 text-xs font-semibold text-muted-foreground bg-card border border-border rounded-full shadow-sm group-hover:border-primary/30 group-hover:text-primary transition-all"
                                         >
                                             {skill}
                                         </span>

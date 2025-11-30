@@ -43,18 +43,18 @@ const experiences = [
 
 export default function ExperiencePage() {
     return (
-        <main className="min-h-screen pt-24 pb-12 px-4 md:px-8 container mx-auto">
+        <main className="min-h-screen pt-24 pb-12 px-4 md:px-8 container mx-auto bg-background transition-colors duration-300">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 className="max-w-4xl mx-auto"
             >
-                <h1 className="text-4xl md:text-5xl font-bold mb-12 text-blue-700">
+                <h1 className="text-4xl md:text-5xl font-bold mb-12 text-primary">
                     Where I've Worked
                 </h1>
 
-                <div className="relative border-l border-slate-200 ml-3 md:ml-6 space-y-12 mb-24">
+                <div className="relative border-l border-border ml-3 md:ml-6 space-y-12 mb-24">
                     {experiences.map((exp, index) => (
                         <motion.div
                             key={index}
@@ -64,20 +64,20 @@ export default function ExperiencePage() {
                             transition={{ delay: index * 0.1 }}
                             className="relative pl-8 md:pl-12"
                         >
-                            <div className="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-teal-500 ring-4 ring-white" />
+                            <div className="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-background" />
 
-                            <span className="inline-block px-3 py-1 mb-2 text-xs font-mono text-teal-700 bg-teal-50 rounded-full border border-teal-200">
+                            <span className="inline-block px-3 py-1 mb-2 text-xs font-mono text-primary-foreground bg-primary rounded-full border border-primary/20">
                                 {exp.date}
                             </span>
 
-                            <h3 className="text-2xl font-bold text-slate-900 mb-1">{exp.title}</h3>
-                            <h4 className="text-lg text-slate-500 mb-4">{exp.company}</h4>
+                            <h3 className="text-2xl font-bold text-foreground mb-1">{exp.title}</h3>
+                            <h4 className="text-lg text-muted-foreground mb-4">{exp.company}</h4>
 
-                            <p className="text-slate-600 mb-4 leading-relaxed">
+                            <p className="text-muted-foreground mb-4 leading-relaxed">
                                 {exp.description}
                             </p>
 
-                            <ul className="list-disc list-outside ml-4 space-y-2 text-slate-500 text-sm">
+                            <ul className="list-disc list-outside ml-4 space-y-2 text-muted-foreground text-sm">
                                 {exp.achievements.map((achievement, i) => (
                                     <li key={i}>{achievement}</li>
                                 ))}

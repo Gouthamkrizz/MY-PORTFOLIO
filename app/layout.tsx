@@ -19,8 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${outfit.variable} ${spaceGrotesk.variable} font-sans bg-white text-slate-900 antialiased`}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${outfit.variable} ${spaceGrotesk.variable} antialiased bg-background text-foreground transition-colors duration-300`}>
         <Navbar />
         {children}
         <WhatsAppButton />

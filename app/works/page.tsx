@@ -66,7 +66,7 @@ export default function WorksPage() {
         : projects.filter(p => p.category === activeCategory);
 
     return (
-        <main className="min-h-screen pt-24 pb-12 px-4 md:px-8 container mx-auto bg-slate-50">
+        <main className="min-h-screen pt-24 pb-12 px-4 md:px-8 container mx-auto bg-background transition-colors duration-300">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -74,10 +74,10 @@ export default function WorksPage() {
                 className="max-w-7xl mx-auto"
             >
                 <div className="text-center mb-16">
-                    <h1 className="text-4xl md:text-6xl font-bold mb-6 text-blue-700 tracking-tight">
+                    <h1 className="text-4xl md:text-6xl font-bold mb-6 text-primary tracking-tight">
                         Featured Projects
                     </h1>
-                    <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+                    <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
                         A collection of my work in AI, Machine Learning, and Data Engineering.
                         Solving complex problems with data-driven solutions.
                     </p>
@@ -91,8 +91,8 @@ export default function WorksPage() {
                             onClick={() => setActiveCategory(cat)}
                             variant={activeCategory === cat ? "default" : "outline"}
                             className={`rounded-full px-6 transition-all ${activeCategory === cat
-                                    ? "bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/30"
-                                    : "bg-white text-slate-600 hover:bg-slate-100 border-slate-200"
+                                ? "bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/30"
+                                : "bg-card text-muted-foreground hover:bg-muted border-border"
                                 }`}
                         >
                             {cat}
